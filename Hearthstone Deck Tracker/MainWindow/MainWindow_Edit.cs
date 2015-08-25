@@ -225,6 +225,7 @@ namespace Hearthstone_Deck_Tracker
 					                       NegativeButtonText = "do not clone history"
 				                       })) == MessageDialogResult.Affirmative;
 			var clone = (Deck)deck.CloneWithNewId(false);
+			// bug #1316 - ResetVersions needs the current version as an argument
 			clone.ResetVersions();
 			clone.ResetHearthstatsIds();
 			clone.Archived = false;
